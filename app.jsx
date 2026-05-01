@@ -7,9 +7,6 @@ const { useState, useEffect, useRef } = React;
 const CONTACT = {
   whatsappNumber: "5586981550803",
   whatsappDisplay: "+55 86 98155-0803",
-  phone: "+55 86 3000 0000",
-  phoneTel: "+558630000000",
-  email: "contato@hugovaz.adv.br",
   addressLines: [
     "Edifício Euro Business · Sala 1207",
     "Av. Nossa Senhora de Fátima, 1234",
@@ -107,7 +104,7 @@ const Hero = ({ showCrest, showAccent }) => (
   <header id="top" style={styles.hero} data-hero>
     <div style={styles.heroGrain} />
     <div style={styles.heroInner} data-section-inner>
-      <div style={styles.heroMeta}>
+      <div style={styles.heroMeta} data-hero-meta>
         <span style={styles.heroMetaDot} />
         <span>Teresina · Piauí</span>
         <span style={styles.heroMetaSep}>·</span>
@@ -116,20 +113,20 @@ const Hero = ({ showCrest, showAccent }) => (
         <span>Desde 2014</span>
       </div>
 
-      <h1 style={styles.heroTitle}>
+      <h1 style={styles.heroTitle} data-hero-title>
         A defesa <em style={styles.heroEm}>séria</em> dos seus<br/>
         direitos previdenciários,<br/>
         conduzida com <em style={styles.heroEm}>discrição</em>.
       </h1>
 
-      <p style={styles.heroLede}>
+      <p style={styles.heroLede} data-hero-lede>
         Há mais de uma década, o escritório <strong>Hugo Vaz da Rocha</strong> assessora
         servidores públicos, profissionais liberais e segurados do INSS em causas
         previdenciárias de alta complexidade, com a maturidade técnica e o cuidado
         humano que cada história exige.
       </p>
 
-      <div style={styles.heroActions}>
+      <div style={styles.heroActions} data-hero-actions>
         <a href="#contato" style={styles.btnPrimary}>
           Agendar análise do caso
           <span style={styles.btnArrow}>→</span>
@@ -141,17 +138,17 @@ const Hero = ({ showCrest, showAccent }) => (
 
       <div style={styles.heroFoot} data-grid="hero-stats">
         <div style={styles.heroStat}>
-          <div style={styles.heroStatN}>12</div>
+          <div style={styles.heroStatN} data-stat-n>12</div>
           <div style={styles.heroStatL}>anos<br/>de atuação</div>
         </div>
         <div style={styles.heroStatRule} data-rule />
         <div style={styles.heroStat}>
-          <div style={styles.heroStatN}>+ 800</div>
+          <div style={styles.heroStatN} data-stat-n>+ 800</div>
           <div style={styles.heroStatL}>processos<br/>previdenciários</div>
         </div>
         <div style={styles.heroStatRule} data-rule />
         <div style={styles.heroStat}>
-          <div style={styles.heroStatN}>OAB / PI</div>
+          <div style={styles.heroStatN} data-stat-n>OAB / PI</div>
           <div style={styles.heroStatL}>nº 14.732<br/>Hugo Vaz da Rocha</div>
         </div>
       </div>
@@ -234,7 +231,7 @@ const Atuacao = () => (
 
       <div style={styles.areaGrid} data-grid="areas">
         {AREAS.map(a => (
-          <article key={a.n} style={styles.areaCard}>
+          <article key={a.n} style={styles.areaCard} data-card="area">
             <div style={styles.areaN}>{a.n}.</div>
             <h3 style={styles.areaT}>{a.t}</h3>
             <p style={styles.areaD}>{a.d}</p>
@@ -358,7 +355,7 @@ const Depoimentos = () => (
       </h2>
       <div style={styles.quoteGrid} data-grid="quotes">
         {QUOTES.map((q, i) => (
-          <figure key={i} style={styles.quoteCard}>
+          <figure key={i} style={styles.quoteCard} data-card="quote">
             <div style={styles.quoteMark}>“</div>
             <blockquote style={styles.quoteText}>{q.q}</blockquote>
             <figcaption style={styles.quoteCap}>
@@ -424,24 +421,24 @@ const Contato = () => {
               </div>
             </a>
 
-            <div style={styles.contactRow} data-grid="contact-row">
-              <a href={`tel:${CONTACT.phoneTel}`} style={{...styles.contactBlock, textDecoration: "none"}}>
-                <div style={styles.contactLabel}>Telefone</div>
-                <div style={{...styles.contactValue, ...styles.contactLink}}>{CONTACT.phone}</div>
-              </a>
-              <a
-                href={waLink("Olá, Dr. Hugo. Gostaria de conversar sobre o meu caso.")}
-                target="_blank" rel="noopener noreferrer"
-                style={{...styles.contactBlock, textDecoration: "none"}}
-              >
-                <div style={styles.contactLabel}>WhatsApp</div>
-                <div style={{...styles.contactValue, ...styles.contactLink}}>{CONTACT.whatsappDisplay}</div>
-              </a>
-              <a href={`mailto:${CONTACT.email}`} style={{...styles.contactBlock, textDecoration: "none"}}>
-                <div style={styles.contactLabel}>E-mail</div>
-                <div style={{...styles.contactValue, ...styles.contactLink}}>{CONTACT.email}</div>
-              </a>
-            </div>
+            <a
+              href={waLink("Olá, Dr. Hugo. Gostaria de conversar sobre o meu caso.")}
+              target="_blank" rel="noopener noreferrer"
+              style={styles.contactWaCard}
+              data-card="wa"
+            >
+              <div style={styles.contactWaIcon} data-wa-icon>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <path d="M19.05 4.91A10 10 0 0 0 4.6 18.6L3 22l3.5-1.5A10 10 0 1 0 19.05 4.91Zm-7 15.34a8.3 8.3 0 0 1-4.24-1.16l-.3-.18-2.07.88.88-2.02-.2-.31a8.3 8.3 0 1 1 5.93 2.79Zm4.55-6.21c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13s-.64.81-.79.98c-.14.17-.29.18-.54.06a6.78 6.78 0 0 1-2-1.24 7.5 7.5 0 0 1-1.39-1.72c-.14-.25 0-.39.11-.51.11-.11.25-.29.37-.43a1.7 1.7 0 0 0 .25-.41.46.46 0 0 0 0-.43c-.06-.13-.56-1.36-.77-1.86-.2-.49-.41-.42-.56-.43h-.48a.92.92 0 0 0-.67.31 2.8 2.8 0 0 0-.87 2.07 4.84 4.84 0 0 0 1 2.59 11.16 11.16 0 0 0 4.27 3.78c.6.26 1.07.41 1.43.53a3.46 3.46 0 0 0 1.58.1 2.59 2.59 0 0 0 1.69-1.19 2.1 2.1 0 0 0 .15-1.19c-.06-.11-.23-.18-.48-.31Z"/>
+                </svg>
+              </div>
+              <div>
+                <div style={styles.contactLabel}>Atendimento via WhatsApp</div>
+                <div style={styles.contactWaNumber} data-wa-num>{CONTACT.whatsappDisplay}</div>
+                <div style={styles.contactWaHint}>Toque para iniciar uma conversa privada</div>
+              </div>
+              <span style={styles.contactWaArrow} aria-hidden>→</span>
+            </a>
 
             <div style={styles.contactBlock}>
               <div style={styles.contactLabel}>Horário de atendimento</div>
@@ -465,7 +462,7 @@ const Contato = () => {
           </div>
 
           {!sent ? (
-            <form style={styles.form} onSubmit={onSubmit}>
+            <form style={styles.form} onSubmit={onSubmit} data-card="form">
               <div style={styles.formField}>
                 <label style={styles.formLabel}>Nome completo</label>
                 <input style={styles.formInput} required
@@ -515,7 +512,7 @@ const Contato = () => {
               </p>
             </form>
           ) : (
-            <div style={styles.formSent}>
+            <div style={styles.formSent} data-card="form-sent">
               <div style={styles.formSentMark}>✓</div>
               <h3 style={styles.formSentT}>Conversa iniciada no WhatsApp.</h3>
               <p style={styles.formSentD}>
@@ -584,12 +581,19 @@ const Footer = () => (
             </ul>
           </div>
           <div>
-            <div style={styles.footColT}>Endereço</div>
+            <div style={styles.footColT}>Contato</div>
             <ul style={styles.footList}>
-              <li>Edifício Euro Business</li>
-              <li>Sala 1207</li>
+              <li>Edifício Euro Business · Sala 1207</li>
               <li>Teresina · PI</li>
-              <li>+55 86 3000 0000</li>
+              <li>
+                <a
+                  href={waLink("Olá, Dr. Hugo. Gostaria de tirar uma dúvida.")}
+                  target="_blank" rel="noopener noreferrer"
+                  style={{color: "inherit", textDecoration: "none"}}
+                >
+                  WhatsApp · {CONTACT.whatsappDisplay}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -613,6 +617,7 @@ const FloatingWhatsApp = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Conversar pelo WhatsApp"
+      data-fab
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -1070,6 +1075,47 @@ const styles = {
   contactLink: {
     transition: "color 200ms ease",
     cursor: "pointer",
+  },
+  contactWaCard: {
+    marginTop: 32,
+    display: "flex",
+    alignItems: "center",
+    gap: 20,
+    padding: "20px 22px",
+    background: "rgba(37,211,102,0.08)",
+    border: "1px solid rgba(37,211,102,0.35)",
+    borderRadius: 12,
+    textDecoration: "none",
+    color: "var(--paper)",
+    transition: "background 200ms ease, transform 200ms ease",
+  },
+  contactWaIcon: {
+    flexShrink: 0,
+    width: 52, height: 52,
+    borderRadius: "50%",
+    background: "#25D366",
+    color: "#fff",
+    display: "flex", alignItems: "center", justifyContent: "center",
+  },
+  contactWaNumber: {
+    fontFamily: "var(--serif)",
+    fontSize: 24,
+    fontWeight: 400,
+    color: "var(--paper)",
+    margin: "4px 0 4px",
+    lineHeight: 1.1,
+    letterSpacing: "-0.01em",
+  },
+  contactWaHint: {
+    fontFamily: "var(--mono)", fontSize: 11,
+    letterSpacing: "0.14em", textTransform: "uppercase",
+    color: "rgba(245,241,234,0.55)",
+  },
+  contactWaArrow: {
+    marginLeft: "auto",
+    fontSize: 22,
+    color: "var(--gold-soft)",
+    flexShrink: 0,
   },
   mapPh: {
     marginTop: 40,
