@@ -5,8 +5,8 @@ const { useState, useEffect, useRef } = React;
    CONTATO — edite estes valores e tudo no site se ajusta sozinho.
    ---------------------------------------------------------------- */
 const CONTACT = {
-  whatsappNumber: "5586999990000",
-  whatsappDisplay: "+55 86 99999 0000",
+  whatsappNumber: "5586981550803",
+  whatsappDisplay: "+55 86 98155-0803",
   phone: "+55 86 3000 0000",
   phoneTel: "+558630000000",
   email: "contato@hugovaz.adv.br",
