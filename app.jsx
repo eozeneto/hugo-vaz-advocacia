@@ -169,7 +169,7 @@ const Escritorio = () => (
       <SectionLabel n="01">O escritório</SectionLabel>
       <div style={styles.twoCol} data-grid="2col">
         <div>
-          <h2 style={styles.h2}>
+          <h2 style={styles.h2} data-h2>
             Uma banca pequena por escolha.<br/>
             <em style={styles.serifEm}>Pessoal</em> por convicção.
           </h2>
@@ -220,7 +220,7 @@ const Atuacao = () => (
   <section id="atuacao" style={{...styles.section, background: "var(--paper-2)"}}>
     <div style={styles.sectionInner} data-section-inner>
       <SectionLabel n="02">Áreas de atuação</SectionLabel>
-      <h2 style={{...styles.h2, maxWidth: 820}}>
+      <h2 style={{...styles.h2, maxWidth: 820}} data-h2>
         Concentração total em <em style={styles.serifEm}>Direito Previdenciário</em>.
       </h2>
       <p style={{...styles.body, maxWidth: 720, marginBottom: 64}}>
@@ -314,7 +314,7 @@ const Processo = () => (
   <section id="processo" style={styles.section}>
     <div style={styles.sectionInner} data-section-inner>
       <SectionLabel n="04">Como trabalhamos</SectionLabel>
-      <h2 style={{...styles.h2, maxWidth: 820}}>
+      <h2 style={{...styles.h2, maxWidth: 820}} data-h2>
         Quatro etapas, conduzidas <em style={styles.serifEm}>pessoalmente</em>.
       </h2>
 
@@ -350,7 +350,7 @@ const Depoimentos = () => (
   <section style={{...styles.section, background: "var(--paper-2)"}}>
     <div style={styles.sectionInner} data-section-inner>
       <SectionLabel n="05">Em confiança</SectionLabel>
-      <h2 style={{...styles.h2, maxWidth: 820, marginBottom: 64}}>
+      <h2 style={{...styles.h2, maxWidth: 820, marginBottom: 64}} data-h2>
         Palavras de quem já <em style={styles.serifEm}>nos confiou</em> sua causa.
       </h2>
       <div style={styles.quoteGrid} data-grid="quotes">
@@ -398,9 +398,9 @@ const Contato = () => {
 
         <div style={styles.contactGrid} data-grid="contact">
           <div>
-            <h2 style={{...styles.h2, color: "var(--paper)"}}>
-              Uma conversa <em style={styles.serifEm}>reservada</em>,<br/>
-              sem compromisso.
+            <h2 style={{...styles.h2, color: "var(--paper)"}} data-h2>
+              Uma conversa <em style={styles.serifEm}>reservada</em>,
+              {" "}sem compromisso.
             </h2>
             <p style={{...styles.body, color: "rgba(245,241,234,0.72)", maxWidth: 480}}>
               O primeiro contato não tem custo. Apresente seu caso pelo formulário,
@@ -469,7 +469,7 @@ const Contato = () => {
                   value={form.nome}
                   onChange={e => setForm({...form, nome: e.target.value})}/>
               </div>
-              <div style={styles.formRow}>
+              <div style={styles.formRow} data-grid="form-row">
                 <div style={styles.formField}>
                   <label style={styles.formLabel}>E-mail</label>
                   <input style={styles.formInput} type="email" required
